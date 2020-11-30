@@ -1,5 +1,7 @@
 package gr11review.part2;
 
+import java.io.*;
+
 /**
 *Java file that contains all methods
 * @author: E. Aroozoo
@@ -48,7 +50,7 @@ public class Utility {
     * @author: E. Aroozoo
     */
 
-    public static String longestWord(String filenametxt) {
+    public static String longestWord(String filenametxt) throws IOException {
       BufferedReader filename = new BufferedReader(new FileReader(filenametxt));
 
       //Variables

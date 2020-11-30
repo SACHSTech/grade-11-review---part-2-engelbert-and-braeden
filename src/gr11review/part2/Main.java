@@ -19,6 +19,5 @@ public class Main {
   String strLongestWord;
   strLongestWord = Utility.longestWord("src/gr11review/part2/words.txt");
   System.out.println(strLongestWord);
-
 	}
 }
