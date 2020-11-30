@@ -1,6 +1,7 @@
 package gr11review.part2;
 
 import java.io.*;
+import java.util.*;
 
 /**
 *Java file that contains all methods
@@ -45,8 +46,8 @@ public class Utility {
     /**
     *Write a method longestWord(String filenametxt) such that given the name of a file filenametxt that *contains a single word on each line, returns the longest word in the file.
     *
-    *@param strZipZap the string that contains the patterns with the z's and p's
-    *@return strZP the string without the letter between z and p
+    *@param filename the file that contains all the words
+    *@return strWord the string that is the longest in the file
     * @author: E. Aroozoo
     */
 
@@ -56,21 +57,37 @@ public class Utility {
       //Variables
       String strWord;
       String strLongestWord;
+      int intWordLength;
+      int intLongestWordLength;
 
+      //Setting up
       strWord = filename.readLine();
       strLongestWord = filename.readLine();
 
+
       //Comparing the next word to see if it is longer
-      while(strWord != "") {
-        if(strWord.length() >= strLongestWord.length()) {
-          strWord = strLongestWord;
+      while(strWord != null) {
+        intWordLength = strWord.length();
+        intLongestWordLength = strLongestWord.length();
+          if(intWordLength >= intLongestWordLength) {
+            strLongestWord = strWord;
         }
-        strLongestWord = filename.readLine();
+        strWord += filename.readLine();
       }
       filename.close();
       //Returning Longest Word
       return strWord;
     }
-  
+    /**
+    *For each multiple of 10 in the given array, change all the values following it to be that multiple of *10, until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2, 10, 10, 10, 20, 20}.
+    *
+    *@param filename the file that contains all the words
+    *@return strWord the string that is the longest in the file
+    * @author: E. Aroozoo
+    */
+    public static public int[] tenRun(int[] nums) {
+
+     
+    }
 //end of utility file
 }

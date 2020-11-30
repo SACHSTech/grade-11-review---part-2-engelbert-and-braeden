@@ -16,8 +16,6 @@ public class Main {
 	System.out.println(Utility.zipZap("zipxxxxzopzap"));
 
   //Testing FileIO - Read 1
-  String strLongestWord;
-  strLongestWord = Utility.longestWord("src/gr11review/part2/words.txt");
-  System.out.println(strLongestWord);
+  System.out.println(Utility.longestWord("src/gr11review/part2/words.txt"));
 	}
 }
