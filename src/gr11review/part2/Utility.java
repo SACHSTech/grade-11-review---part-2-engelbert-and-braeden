@@ -125,20 +125,35 @@ public class Utility {
     //Return true since technically "all" numbers appear in outter array
     if(inner.length == 0) {
       return true;
-    }
+    } 
 
       //Going through the array
-      for(i = 0; i < inner.length; i++) {
-        if(inner[i] == outer[t]) {
+      while(i < outer.length) {
+        i++;
+        //Comparing inner to outer values to see if the numbers matches
+        if(outer[i] == inner[t]) {
           intNumber++;
           t++;
-        } else if(inner[i] < outer[t]) {
+        //If outer has more unique numbers than inner, return false
+        } else if(outer[i] > inner[t]) {
           return false;
-        } else if(intNumber == inner.length) {
-          return true;
+        //If they have same amount of unique numbers, return true
+        } if(intNumber == inner.length) {
+        return true;
         }
       }
       return false;
+    }
+    /**
+    *Write a method pascalTri(int i, int j) that outputs to a text file pascalOut.txt, a comma separted table containing i rows and j columns of pascal's triangle. Be sure to use two-dimensional array in your solution.
+    *
+    * @param i - rows of the pascals triangle
+    * @param j - columns of the pascals triangle 
+    * @author: E. Aroozoo
+    */
+    public static void pascalTri(int i, int j) throws IOException{
+      PrintWriter InputPascal = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt"));
+      
     }
 //end of utility file
 }
