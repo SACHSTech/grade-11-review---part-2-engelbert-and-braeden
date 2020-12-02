@@ -52,7 +52,7 @@ public class Utility {
     *Write a method longestWord(String filenametxt) such that given the name of a file filenametxt that *contains a single word on each line, returns the longest word in the file.
     *
     * @param filename - the file that contains all the words
-    * @return strWord - the string that is the longest in the file
+    * @return strLongestWord - the string that is the longest in the file
     * @author: E. Aroozoo
     */
 
@@ -136,7 +136,7 @@ public class Utility {
     i = 0;
     t = 0;
     
-    //Return true since technically "all" numbers appear in outter array
+    //Return true since technically "all" numbers would appear in outer array
     if(inner.length == 0) {
       return true;
     } 
@@ -164,7 +164,7 @@ public class Utility {
     /**
     *Write a method pascalTri(int i, int j) that outputs to a text file pascalOut.txt, a comma separted table containing i rows and j columns of pascal's triangle. Be sure to use two-dimensional array in your solution.
     *
-    * @param i - rows of the pascals triangle
+    * @param f - rows of the pascals triangle
     * @param j - columns of the pascals triangle 
     * @author: E. Aroozoo
     */
