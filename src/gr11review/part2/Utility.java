@@ -23,25 +23,26 @@ public class Utility {
       //Variables
       String strZP;
       int intCounter;
+      int intSentenceLength;
 
-      intCounter = 1;
+      //Setting Variables
       strZP = "";
+      intSentenceLength = strZipZap.length();
 
-      //If Sentence less than 2 words, send back sentence
-      if(strZipZap.length() <= 2) {
-        return strZipZap;
-      }
-      //Counter for sentence, checks if there is z and p
-      for(intCounter = 0; intCounter < strZipZap.length() - 2; intCounter++) {
-        if(strZipZap.charAt(intCounter) == 'z' && strZipZap.charAt(intCounter + 2) == 'p') {
-          strZP += "zp";
-          intCounter = intCounter + 2;
-        } else {
-          strZP = strZP + strZipZap.charAt(intCounter);
+      //If Sentence less than 2 letters, send back sentence (does not contain z*p pattern)
+      if(intSentenceLength >= 3) {
+         //Counter for sentence, checks if there is z and p
+        for(intCounter = 0;intCounter < intSentenceLength; intCounter++) {
+          strZP += strZipZap.substring(intCounter, intCounter + 1);
+            if(intCounter > 0 && intCounter < intSentenceLength - 1) {
+              if(strZipZap.charAt(intCounter - 1) == 'z' && strZipZap.charAt(intCounter+1) == 'p')
+              strZP = strZP.substring(0,strZP.length() - 1);
+            }
         }
+        return strZP;
+      } else {
+        return strZP;
       }
-      //Returning Sentence
-      return strZP;
     }
     /**
     *Write a method longestWord(String filenametxt) such that given the name of a file filenametxt that *contains a single word on each line, returns the longest word in the file.
