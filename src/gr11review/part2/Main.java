@@ -35,7 +35,7 @@ public class Main {
     System.out.println(Arrays.toString(nums));
 
   //Array 3 - One Dimensional - Two Loops
-   System.out.print("How many numbers do you want to enter into the outer array: ");
+  System.out.print("How many numbers do you want to enter into the outer array: ");
   intInput = Integer.parseInt(key.readLine());
   System.out.println("Input your numbers below: ");
   int[] outer = new int[intInput];
@@ -50,5 +50,11 @@ public class Main {
      inner[i] = Integer.parseInt(key.readLine());
     }
     System.out.println(Utility.linearIn(outer , inner));
-	}
+	//Array 5 - Two Dimensional
+  System.out.print("How many rows do you want to generate: ");
+  int f =  Integer.parseInt(key.readLine());
+  System.out.print("How many columns do you want to generate: ");
+  int j = Integer.parseInt(key.readLine());
+  Utility.pascalTri(f, j);
+  }
 }

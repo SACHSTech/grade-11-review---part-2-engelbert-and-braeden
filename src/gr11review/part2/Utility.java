@@ -151,20 +151,20 @@ public class Utility {
     * @param j - columns of the pascals triangle 
     * @author: E. Aroozoo
     */
-    public static void pascalTri(int i, int j) throws IOException{
+    public static void pascalTri(int f, int j) throws IOException{
       PrintWriter InputPascal = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt"));
 
       //Variables
       int intCounterA;
       int intCounterB;
-      int intPascal[][] = new int[i][j];
+      int intPascal[][] = new int[f][j];
 
       //Setting Variables
       intCounterA = 0;
       intCounterB = 0;
 
       //Setting up first row equal to one
-      while(intCounterA < i) {
+      while(intCounterA < f) {
         intPascal[intCounterA][0] = 1;
         intCounterA++;
       } 
@@ -176,18 +176,18 @@ public class Utility {
       }
 
       //Using the values from the column and row before to generate the corner values
-      for(intCounterA = 1; intCounterA < i; intCounterA++) {
+      for(intCounterA = 1; intCounterA < f; intCounterA++) {
         for(intCounterB = 1; intCounterB < j; intCounterB++) {
-          intPascal[intCOunterA][intCounterB] = intPascal[intCounterA - 1][intCounterB] +intPascal[intCounterA][intCounterB - 1];
+          intPascal[intCounterA][intCounterB] = intPascal[intCounterA - 1][intCounterB] +intPascal[intCounterA][intCounterB - 1];
         }
       }
 
       //Printing the values into pascalOut.txt
-      for(intCounterA = 0; intCounterA < i; intCounterA++) {
+      for(intCounterA = 0; intCounterA < f; intCounterA++) {
         for(intCounterB = 0; intCounterB < j; intCounterB++) {
-          InputPascal.print(intPascal[intCounterA][intCounterB] + ", ");
+          InputPascal.println(intPascal[intCounterA][intCounterB] + ", ");
           if(intCounterB != j -1) {
-            InputPascal.println(" ");
+            InputPascal.println(" "); 
           }
         }
       }
