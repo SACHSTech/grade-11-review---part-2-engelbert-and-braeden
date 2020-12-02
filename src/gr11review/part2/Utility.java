@@ -185,8 +185,8 @@ public class Utility {
       //Printing the values into pascalOut.txt
       for(intCounterA = 0; intCounterA < f; intCounterA++) {
         for(intCounterB = 0; intCounterB < j; intCounterB++) {
-          InputPascal.println(intPascal[intCounterA][intCounterB] + ", ");
-          if(intCounterB != j -1) {
+          InputPascal.print(intPascal[intCounterA][intCounterB] + ", ");
+          if(intCounterB == j -1) {
             InputPascal.println(" "); 
           }
         }
