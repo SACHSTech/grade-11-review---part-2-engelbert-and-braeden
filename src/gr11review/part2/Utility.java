@@ -191,9 +191,8 @@ public class Utility {
           }
         }
       }
-    }
-
     //Closing text file
     InputPascal.close();
+    }
 //end of utility file
 }
