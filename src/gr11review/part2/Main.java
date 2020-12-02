@@ -35,5 +35,21 @@ public class Main {
     System.out.println(Arrays.toString(nums));
 
   //Array 3 - One Dimensional - Two Loops
+
+   System.out.print("How many numbers do you want to enter into the inner array: ");
+  intInput = Integer.parseInt(key.readLine());
+  System.out.println("Input your numbers below: ");
+  int[] inner = new int[intInput];
+    for(i = 0; i < intInput; i++) {
+     inner[i] = Integer.parseInt(key.readLine());
+    }
+   System.out.print("How many numbers do you want to enter into the outer array: ");
+  intInput = Integer.parseInt(key.readLine());
+  System.out.println("Input your numbers below: ");
+  int[] outer = new int[intInput];
+    for(i = 0; i < intInput; i++) {
+     outer[i] = Integer.parseInt(key.readLine());
+    }
+    System.out.println(Utility.linearIn(outer , inner));
 	}
 }

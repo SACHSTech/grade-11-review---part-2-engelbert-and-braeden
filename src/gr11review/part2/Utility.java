@@ -111,7 +111,34 @@ public class Utility {
     * @author: E. Aroozoo
     */
     public static boolean linearIn(int[] outer, int[] inner) {
-      
+    
+    //Variables
+    int intNumber;
+    int i;
+    int t;
+
+    //Setting Variables
+    intNumber = 0;
+    i = 0;
+    t = 0;
+    
+    //Return true since technically "all" numbers appear in outter array
+    if(inner.length == 0) {
+      return true;
+    }
+
+      //Going through the array
+      for(i = 0; i < inner.length; i++) {
+        if(inner[i] == outer[t]) {
+          intNumber++;
+          t++;
+        } else if(inner[i] < outer[t]) {
+          return false;
+        } else if(intNumber == inner.length) {
+          return true;
+        }
+      }
+      return false;
     }
 //end of utility file
 }
