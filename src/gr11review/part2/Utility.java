@@ -153,7 +153,47 @@ public class Utility {
     */
     public static void pascalTri(int i, int j) throws IOException{
       PrintWriter InputPascal = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt"));
-      
+
+      //Variables
+      int intCounterA;
+      int intCounterB;
+      int intPascal[][] = new int[i][j];
+
+      //Setting Variables
+      intCounterA = 0;
+      intCounterB = 0;
+
+      //Setting up first row equal to one
+      while(intCounterA < i) {
+        intPascal[intCounterA][0] = 1;
+        intCounterA++;
+      } 
+
+      //Setting up first column equal to one
+      while(intCounterB < j) {
+        intPascal[0][intCounterB] = 1;
+        intCounterB++;
+      }
+
+      //Using the values from the column and row before to generate the corner values
+      for(intCounterA = 1; intCounterA < i; intCounterA++) {
+        for(intCounterB = 1; intCounterB < j; intCounterB++) {
+          intPascal[intCOunterA][intCounterB] = intPascal[intCounterA - 1][intCounterB] +intPascal[intCounterA][intCounterB - 1];
+        }
+      }
+
+      //Printing the values into pascalOut.txt
+      for(intCounterA = 0; intCounterA < i; intCounterA++) {
+        for(intCounterB = 0; intCounterB < j; intCounterB++) {
+          InputPascal.print(intPascal[intCounterA][intCounterB] + ", ");
+          if(intCounterB != j -1) {
+            InputPascal.println(" ");
+          }
+        }
+      }
     }
+
+    //Closing text file
+    InputPascal.close();
 //end of utility file
 }
