@@ -35,10 +35,14 @@ public class Utility {
         for(intCounter = 0;intCounter < intSentenceLength; intCounter++) {
           strZP += strZipZap.substring(intCounter, intCounter + 1);
             if(intCounter > 0 && intCounter < intSentenceLength - 1) {
+
+              //Finds out if there is a z and p pattern and collects the string
               if(strZipZap.charAt(intCounter - 1) == 'z' && strZipZap.charAt(intCounter+1) == 'p')
               strZP = strZP.substring(0,strZP.length() - 1);
             }
         }
+
+        //Return string removing the letter between "z" and "p"
         return strZP;
       } else {
         return strZP;
@@ -61,12 +65,12 @@ public class Utility {
       int intWordLength;
       int intLongestWordLength;
 
-      //Setting up
+      //Setting Variables (Putting the data from the file into the variable)
       strWord = filename.readLine();
       strLongestWord = filename.readLine();
 
 
-      //Comparing the next word to see if it is longer
+      //Comparing the next word to see if it is longer than the current word
       while(strWord != null) {
         intWordLength = strWord.length();
         intLongestWordLength = strLongestWord.length();
@@ -75,6 +79,8 @@ public class Utility {
         }
         strWord = filename.readLine();
       }
+
+      //Closing File
       filename.close();
       //Returning Longest Word
       return strLongestWord;
@@ -92,15 +98,22 @@ public class Utility {
     int i;
     int intMultiple;
 
+    //Setting Variable
     intMultiple = 1;
 
       for(i = 0; i < nums.length; i++) {
+
+        //We know it is a multiple of 10 if the remainder is 0 when divided by 10
         if(nums[i] % 10 == 0) {
           intMultiple = nums[i];
+
+        //If it is not a multiple of 10, replace it with the multiple of 10
         } else if(nums[i] % 10 != 0 && intMultiple != 1) {
           nums[i] = intMultiple;
         }
       }
+
+    //Returning array with the new values
     return nums;
     }
     /**
@@ -131,13 +144,16 @@ public class Utility {
       //Going through the array
       while(i < outer.length) {
         i++;
+
         //Comparing inner to outer values to see if the numbers matches
         if(outer[i] == inner[t]) {
           intNumber++;
           t++;
+
         //If outer has more unique numbers than inner, return false
         } else if(outer[i] > inner[t]) {
           return false;
+
         //If they have same amount of unique numbers, return true
         } if(intNumber == inner.length) {
         return true;
