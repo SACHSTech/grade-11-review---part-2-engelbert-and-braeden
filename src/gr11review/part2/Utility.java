@@ -9,7 +9,7 @@ public class Utility {
   //add up all the numbers in a string to get a sumNumbers
   //get length of string so to run for loop for correct ammount of time
 
-  public static int sumNumbers(String str){
+  public static int sumNumbers(String str)throws IOException{
     
     int intStringLength = 0;
     int intCount;
@@ -36,7 +36,7 @@ public class Utility {
     return intTotal;
   }
 
-  public static String alphaWord(String filenametxt){
+  public static String alphaWord(String filenametxt)throws IOException{
     
     //access a file and determine which word is alphabetically first
 
@@ -53,11 +53,12 @@ public class Utility {
     if(strLine == null){
       File.close();
       return "";
-    }else if(strLine != null){
+    }
+    if(strLine != null){
       while(strLine != null){
         intCompare = strFinal.compareToIgnoreCase(strLine);
         if(intCompare > 0){
-          strLine = strFinal;
+          strFinal = strLine;
         }
       strLine = File.readLine();
 
@@ -66,5 +67,9 @@ public class Utility {
     }
     File.close();
     return strFinal;
+  }
+
+  public int[] notAlone(int[] nums, int value)throws IOException{
+    
   }
 }
