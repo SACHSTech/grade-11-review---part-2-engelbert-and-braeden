@@ -26,7 +26,7 @@ public class Utility {
         strString = strString+charCharacter;
 
       }else if(!strString.equals("")){
-        intTotal = intTotal+ Integer.parseInt(strString);
+        intTotal = intTotal + Integer.parseInt(strString);
         strString = "";
       }
     }
@@ -69,7 +69,28 @@ public class Utility {
     return strFinal;
   }
 
-  public int[] notAlone(int[] nums, int value)throws IOException{
+  public static int[] notAlone(int[] nums, int value)throws IOException{
     
+    int intCount = 1;
+    int intLength = 0;
+    int intLeftnums = 0;
+    int intRightnums = 0;
+
+    intLength = nums.length;
+
+     for (intCount = 1; intCount < intLength-1; intCount++) {
+      
+      intLeftnums = nums[intCount - 1];
+      intRightnums = nums[intCount + 1];
+
+      if(nums[intCount] == value){
+        if(intLeftnums != nums[intCount] && intRightnums != nums[intCount]){
+          nums[intCount] = Math.max(intLeftnums, intRightnums);
+        }
+      }
+    }
+  return nums;
   }
+
+  
 }

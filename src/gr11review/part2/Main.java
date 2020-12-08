@@ -6,9 +6,11 @@ import java.util.Arrays;
 public class Main{
   public static void main(String[] args) throws IOException{
 
-    String strAlphabet = "";
+    int[] intNums = {1, 2, 3, 2, 5, 2};
+
+    intNums = Utility.notAlone(intNums, 2);
+
+    System.out.println(Arrays.toString(intNums));
     
-    strAlphabet = Utility.alphaWord("src/gr11review/part2/Alphaword.txt");
-    System.out.println(strAlphabet);
   }
 }
