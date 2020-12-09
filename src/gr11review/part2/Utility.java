@@ -127,6 +127,37 @@ public class Utility {
     return false;
   }
   public static void diagonal(int n)throws IOException{
+    PrintWriter Writer = new PrintWriter(new FileWriter("src/gr11review/part2/diagonalOut.txt"));
 
-  }
+    int intCount = 0;
+    int intCount1 = 0;
+    int[][] intDiagonal;
+
+    intDiagonal = new int[n][n];
+
+    //row
+    for(intCount = 0; intCount < n; intCount++){
+      //collumn
+      for(intCount1 = 0; intCount1 <n; intCount1++){
+        if(intCount1 < (n - intCount - 1)){
+          intDiagonal[intCount][intCount1] = 0;
+        }else if(intCount1 == (n - intCount - 1)){
+          intDiagonal[intCount][intCount1] = 1;
+        }else if(intCount1 > (n - intCount - 1)){
+          intDiagonal[intCount][intCount1] = 2;
+        }
+      }
+    }
+    
+    for(intCount = 0; intCount < n; intCount++){
+      for(intCount1 = 0; intCount1 <n; intCount1++){
+        Writer.print(intDiagonal[intCount][intCount1]);
+        if(intCount1 != n - 1){
+          Writer.print(", ");
+        }
+      }
+      Writer.println();
+    }
+    Writer.close();
+  } 
 }
