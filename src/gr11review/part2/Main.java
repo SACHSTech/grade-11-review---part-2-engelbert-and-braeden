@@ -6,11 +6,12 @@ import java.util.Arrays;
 public class Main{
   public static void main(String[] args) throws IOException{
 
-    int[] intNums = {1, 2, 3, 2, 5, 2};
+    int[] intNums = {1, 2, 1, 2, 1, 1};
+    boolean yesno;
 
-    intNums = Utility.notAlone(intNums, 2);
+    yesno = Utility.canBalance(intNums);
 
-    System.out.println(Arrays.toString(intNums));
+    System.out.println(yesno);
     
   }
 }

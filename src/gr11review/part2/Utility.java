@@ -78,7 +78,7 @@ public class Utility {
 
     intLength = nums.length;
 
-     for (intCount = 1; intCount < intLength-1; intCount++) {
+     while(intCount < intLength){
       
       intLeftnums = nums[intCount - 1];
       intRightnums = nums[intCount + 1];
@@ -88,9 +88,45 @@ public class Utility {
           nums[intCount] = Math.max(intLeftnums, intRightnums);
         }
       }
+      intCount = intCount +1;
     }
   return nums;
   }
 
-  
+  public static boolean canBalance(int[] nums)throws IOException{
+
+    int intCount = 0;
+    int intLength = 0;
+    int intSum = 0;
+    int intHalf = 0;
+    int intCounter = 0;
+
+    intLength = nums.length;
+
+    //get the sum of all numbers to determine a halfway
+    while(intCount < intLength){
+      intSum = intSum + nums[intCount];
+      intCount = intCount + 1;
+    }
+
+    intHalf = intSum/2;
+
+    intCount = 0;
+
+    while(intCount < intLength){
+      intCounter = intCounter + nums[intCount];
+      
+      if(intCounter == intHalf){
+        return true;
+      }
+      
+      if(intCounter > intHalf){
+        return false;
+      }
+    }
+    return false;
+  }
+  public static void diagonal(int n)throws IOException{
+
+  }
 }
